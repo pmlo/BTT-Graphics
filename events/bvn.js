@@ -18,7 +18,7 @@ module.exports = (client) => {
             .setTitle("Un membre à quitté le discord !")
             .setDescription(`Aurevoir ${member.user} !`)
             .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
-        member.guild.channels.get('571369311231279104').send(embed)
+        member.guild.channels.get('571377026968322058').send(embed)
      
     });
 };
