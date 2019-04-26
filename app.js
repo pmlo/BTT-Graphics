@@ -49,7 +49,7 @@ bot.on("ready", () => {
     bot.user.setActivity('Dev by Stricix', {type: "LISTENING"});
 });
 
-bot.login("NTcxMzU4NDc5OTA2NzY2ODUw.XMMltQ.RPBIBu7KP3hH2oSMKWZ2NFiowmw");
+bot.login(process.env.token);
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sayembed")) {
