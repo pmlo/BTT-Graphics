@@ -46,10 +46,12 @@ bot.connectDatabase = function connectDatabase(bot, mongoose) {
 
 bot.on("ready", () => {
     console.log("Je suis prêt !");
-    bot.user.setActivity('Dev by Stricix', {type: "LISTENING"});
+    bot.user.setActivity("Dev by Stricix", {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
 });
 
 bot.login(process.env.token);
+
+const channelID = "571375326622646274";
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sayembed")) {
@@ -60,13 +62,13 @@ bot.on('message', message => {
         message.channel.sendMessage(embed);
     message.delete();
     }
-    if(message.content === "!code") {
+    if(message.channel.id == channelID && message.content === "Graphics") {
         message.member.addRole("571375301846892545")
         message.member.removeRole("571369311231279104")
         message.author.createDM().then(channel => {
             channel.send('✅ Vous avez maintenant accès au serveur');
     });
         bot.channels.get("571375350467264565").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
-        message.delete();
+    message.delete();
     }
 });
