@@ -60,4 +60,13 @@ bot.on('message', message => {
         message.channel.sendMessage(embed);
     message.delete();
     }
+    if(message.content === "!code") {
+        message.member.addRole("571375301846892545")
+        message.member.removeRole("571369311231279104")
+        message.author.createDM().then(channel => {
+            channel.send('✅ Vous avez maintenant accès au serveur');
+        message.delete();
+    });
+        bot.channels.get("571375350467264565").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur*");
+    }
 });
