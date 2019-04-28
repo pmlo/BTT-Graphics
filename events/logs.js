@@ -37,7 +37,7 @@ module.exports = (client) => {
                 .addField("Date d\'arrivée", moment(member.joinedAt).format('DD/MM/YYYY HH:mm:ss'),true)
                 .addField("ID", member.user.id, true)
                 .setTimestamp(entryBan.createdAt);
-            if(member.guild.channels.find((channel) => channel.name === "logs"))member.guild.channels.find((channel) => channel.name === "logs").send(log);
+            if(member.guild.channels.find((channel) => channel.name === "sanction"))member.guild.channels.find((channel) => channel.name === "sanction").send(log);
         }else if(userKick != null){
             let log = new Discord.RichEmbed()
                 .setColor(16711680)
@@ -47,7 +47,7 @@ module.exports = (client) => {
                 .addField("Date d\'arrivée", moment(member.joinedAt).format('DD/MM/YYYY HH:mm:ss'),true)
                 .addField("ID", member.user.id, true)
                 .setTimestamp(entryKick.createdAt);
-            if(member.guild.channels.find((channel) => channel.name === "logs"))member.guild.channels.find((channel) => channel.name === "logs").send(log);
+            if(member.guild.channels.find((channel) => channel.name === "sanction"))member.guild.channels.find((channel) => channel.name === "logs").send(log);
         }else{
             let log = new Discord.RichEmbed()
                 .setColor(16711680)
@@ -56,7 +56,7 @@ module.exports = (client) => {
                 .addField("Date d\'arrivée", moment(member.joinedAt).format('DD/MM/YYYY HH:mm:ss'),true)
                 .addField("ID", member.user.id, true)
                 .setTimestamp(new Date());
-            if(member.guild.channels.find((channel) => channel.name === "logs"))member.guild.channels.find((channel) => channel.name === "logs").send(log);
+            if(member.guild.channels.find((channel) => channel.name === "logs"))member.guild.channels.find((channel) => channel.name === "sanction").send(log);
         }
     });
 
