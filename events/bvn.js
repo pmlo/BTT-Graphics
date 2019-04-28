@@ -8,8 +8,7 @@ module.exports = (client) => {
         .setTitle("Un membre à rejoint le discord !")
         .setDescription(`Bienvenue ${member.user} sur le discord de **BTT Graphics** !`)
         .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
-    member.guild.channels.get('571377026968322058').send(embed)
-    member.addRole('571369311231279104')
+    member.guild.channels.get('560909214483087400').send(embed)
     });
 
     client.on('guildMemberRemove', member =>{
@@ -18,7 +17,7 @@ module.exports = (client) => {
             .setTitle("Un membre à quitté le discord !")
             .setDescription(`Aurevoir ${member.user} !`)
             .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
-        member.guild.channels.get('571377026968322058').send(embed)
+        member.guild.channels.get('560909214483087400').send(embed)
      
     });
 };
