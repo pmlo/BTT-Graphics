@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const channellID = "571745242923925505";
+const channellID = "564547130757349387";
 
 module.exports = (bot) => {
 
