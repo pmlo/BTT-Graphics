@@ -51,7 +51,7 @@ bot.on("ready", () => {
 
 bot.login(process.env.token);
 
-const channelID = "571375326622646274";
+const channelID = "553983747809345576";
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sayembed")) {
@@ -63,12 +63,11 @@ bot.on('message', message => {
     message.delete();
     }
     if(message.channel.id == channelID && message.content === "Graphics") {
-        message.member.addRole("571375301846892545")
-        message.member.removeRole("571369311231279104")
+        message.member.addRole("553980596821426200")
         message.author.createDM().then(channel => {
             channel.send('✅ Vous avez maintenant accès au serveur');
     });
-        bot.channels.get("571375350467264565").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
+        bot.channels.get("572065313668202498").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
     message.delete();
     }
 });
