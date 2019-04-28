@@ -219,13 +219,6 @@ bot.on("message", async message => {
     }
 });
 
-const serverStats = {
-        guildID: '545154825827123211',
-        totalUsersID: '564862621694820367',
-        memberCountID: '564862623921864714',
-        botCountID: '564862977698693130'
-    }
-
     bot.on('guildMemberAdd', member =>{
     let embed = new Discord.RichEmbed()
         .setColor('#00ff00')
@@ -234,9 +227,6 @@ const serverStats = {
         .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
     member.guild.channels.get('560909214483087400').send(embed)
     member.addRole("572091157555839163")
-    bot.channels.get(serverStats.totalUsersID).setName(`Membres Total : ${member.guild.memberCount}`);
-    bot.channels.get(serverStats.memberCountID).setName(`Membres Connectés : ${member.guild.members.filter(m => !m.user.bot).size}`);
-    bot.channels.get(serverStats.botCountID).setName(`Nombre de Bot : ${member.guild.members.filter(m => m.user.bot).size}`);
     });
 
     bot.on('guildMemberRemove', member =>{
@@ -245,9 +235,5 @@ const serverStats = {
             .setTitle("Un membre à quitté le discord !")
             .setDescription(`Aurevoir ${member.user} !`)
             .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
-        member.guild.channels.get('560909214483087400').send(embed)
-    bot.channels.get(serverStats.totalUsersID).setName(`Membres Total : ${member.guild.memberCount}`);
-    bot.channels.get(serverStats.memberCountID).setName(`Membres Connectés : ${member.guild.members.filter(m => !m.user.bot).size}`);
-    bot.channels.get(serverStats.botCountID).setName(`Nombre de Bot : ${member.guild.members.filter(m => m.user.bot).size}`);
-     
+        member.guild.channels.get('560909214483087400').send(embed)   
     });
