@@ -207,6 +207,7 @@ bot.on("message", async message => {
           message.channel.delete();
   
           db.delete(`support_${support.targetID}`);
+          bot.users.get(support.targetID).send(`✅ Votre ticket a été fermé, si vous avez d'autres questions, n'hésitez pas`)
           return;
           }
   
