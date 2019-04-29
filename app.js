@@ -50,7 +50,7 @@ bot.on("ready", () => {
     bot.user.setActivity("Mp For Support !", {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
 });
 
-onst channelID = "553983747809345576";
+const channelID = "553983747809345576";
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sayembed")) {
