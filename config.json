@@ -1,0 +1,15 @@
+{
+    "prefix" : "!",
+    "status" : "STREAMING",
+    "serverID" : "545154825827123211",
+    "byPassPermission" : ["527529464029118474"],
+    "role": {
+        "notifannonce": "570214608942661633",
+        "notifevents": "564871811993567248",
+        "notifpub": "570215476999880754"
+    },
+    
+    "message": {
+        "giveroles": "572401031439319049"
+    }
+}
