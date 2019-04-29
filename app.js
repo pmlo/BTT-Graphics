@@ -233,4 +233,4 @@ bot.on("message", async message => {
     }
 });
 
-bot.login("NTcxMzU4NDc5OTA2NzY2ODUw.XMcnmQ.8xIqTtRPlF8KJpAn0oLwEbFxSxQ");
+bot.login("");
