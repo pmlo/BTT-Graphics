@@ -64,8 +64,8 @@ bot.on('message', message => {
     message.delete();
     }
     if(message.channel.id == channelID && message.content === "Graphics") {
-      message.member.addRole("571375301846892545")
-      message.member.removeRole("571369311231279104")
+      message.member.addRole("553980596821426200")
+      message.member.removeRole("572091157555839163")
       message.author.createDM().then(channel => {
           channel.send('✅ Vous avez maintenant accès au serveur');
     });
