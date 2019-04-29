@@ -72,6 +72,20 @@ bot.on('message', message => {
       bot.channels.get("571375350467264565").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
     message.delete();
     }
+    if(message.content === "!modo") {
+      message.author.createDM().then(channel => {
+          var embed = new Discord.RichEmbed()
+          .setColor('#0090ff')
+          .setTitle(':tools: Voici les commandes modérations !')
+          .addField("!kick <@user>", "Kick l'utilisateur mentionné")
+          .addField("!ban <@user>", "Bannir l'utilisateur mentionné")
+          .addField("!purge nombre", "Supprime le nombre de messages indiqué")
+          .addField("!warn <@user>", "Warn l'utilisateur mentionné")
+          .setTimestamp()
+          channel.send(embed);
+    });
+    message.channel.sendMessage('✅ Commandes envoyés en priver !');
+    }
 });
 
 
