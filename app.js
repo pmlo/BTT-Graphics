@@ -50,7 +50,7 @@ bot.on("ready", () => {
     bot.user.setActivity("Mp For Support !", {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
 });
 
-bot.login("NTcxMzU4NDc5OTA2NzY2ODUw.XMMltQ.RPBIBu7KP3hH2oSMKWZ2NFiowmw");
+bot.login(process.env.token);
 
 const channelID = "571375326622646274";
 
