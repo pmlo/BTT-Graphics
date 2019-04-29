@@ -15,7 +15,7 @@ client.on('guildMemberAdd', member =>{
     client.on('guildMemberRemove', member =>{
         let embed = new Discord.RichEmbed()
             .setColor('#ff0000')
-            .setTile("Un membre à quitté le discord !")
+            .setTitle("Un membre à quitté le discord !")
             .setDescription("Aurevoir " + member.user + ' !')
             .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
         member.guild.channels.get('57239532557107200').send(embed)
