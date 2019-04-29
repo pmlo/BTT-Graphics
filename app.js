@@ -69,7 +69,7 @@ bot.on('message', message => {
       message.author.createDM().then(channel => {
           channel.send('✅ Vous avez maintenant accès au serveur');
     });
-      bot.channels.get("571375350467264565").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
+      bot.channels.get("572065313668202498").send("✅ **" + message.author.username + "** Viens d'avoir accès au Serveur");
     message.delete();
     }
     if(message.content === "!modo") {
