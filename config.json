@@ -3,13 +3,14 @@
     "status" : "STREAMING",
     "serverID" : "545154825827123211",
     "byPassPermission" : ["527529464029118474"],
-    "role": {
-        "notifannonce": "570214608942661633",
-        "notifevents": "564871811993567248",
-        "notifpub": "570215476999880754"
+    "bdd" : {
+        "url" : "ds247121.mlab.com:47121",
+        "user" : "LFDF",
+        "password" : "azerty",
+        "database" : "LFDF"
     },
-    
-    "message": {
-        "giveroles": "572401031439319049"
+    "api" : {
+        "youtube-api" : "AIzaSyCy837MIk2s4_93rPqXleF4ixMB6A2RkbE",
+        "fortnite-api" : "d02f77e6-da71-413f-8608-bf7a317de9a0"
     }
 }
