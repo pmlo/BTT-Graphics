@@ -79,35 +79,6 @@ bot.on('message', message => {
 
 bot.on("message", async message => {
 
-  let inscriptionduo = ['Graphics' ]
-  let noFound = false;
-
-  if(message.channel.id == "553983747809345576") {
-    if(message.member.hasPermissions("ADMINISTRATOR")) {
-        return;
-    }
-
-    for (var i in inscriptionduo) {
-    if (!message.content.toLowerCase().includes(inscriptionduo[i].toLowerCase())) noFound = true;
-  }
-    if(noFound) {
-      message.delete();
-
-      message.author.send(":x: Mauvais Mot de Passe !");
-      return;
-    }
-  message.member.addRole("553980596821426200")
-  message.member.removeRole("572091157555839163")
-  message.author.send("✅ Vous avez maintenant accès au serveur")
-  message.delete();
-  bot.channels.get("572065313668202498").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
-  }
-
-});
-
-
-bot.on("message", async message => {
-
     if(message.author.bot) return;
   
     if(message.channel.type !== 'text') {
