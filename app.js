@@ -61,15 +61,6 @@ bot.on('message', message => {
         message.channel.sendMessage(embed);
     message.delete();
     }
-    if(message.channel.id == channelID && message.content === "Graphics") {
-      message.member.addRole("553980596821426200")
-      message.member.removeRole("572091157555839163")
-      message.author.createDM().then(channel => {
-          channel.send('✅ Vous avez maintenant accès au serveur');
-    });
-      bot.channels.get("572065313668202498").send("✅ **" + message.author.username + "** Viens d'avoir accès au Serveur");
-    message.delete();
-    }
     if(message.content === "!modo") {
       message.author.createDM().then(channel => {
           var embed = new Discord.RichEmbed()
@@ -84,6 +75,34 @@ bot.on('message', message => {
     });
     message.channel.sendMessage('✅ Commandes envoyés en priver !');
     }
+});
+
+bot.on("message", async message => {
+
+  let inscriptionduo = ['Graphics' ]
+  let noFound = false;
+
+  if(message.channel.id == "553983747809345576") {
+    if(message.member.hasPermissions("ADMINISTRATOR")) {
+        return;
+    }
+
+    for (var i in inscriptionduo) {
+    if (!message.content.toLowerCase().includes(inscriptionduo[i].toLowerCase())) noFound = true;
+  }
+    if(noFound) {
+      message.delete();
+
+      message.author.send(":x: Mauvais Mot de Passe !");
+      return;
+    }
+  message.member.addRole("553980596821426200")
+  message.member.removeRole("572091157555839163")
+  message.author.send("✅ Vous avez maintenant accès au serveur")
+  message.delete();
+  bot.channels.get("572065313668202498").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
+  }
+
 });
 
 
