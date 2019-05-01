@@ -230,4 +230,41 @@ bot.on("message", async message => {
     }
 });
 
+bot.on('message', message => {
+  if(message.content === "!gvw") {
+    const filter = m => m.author.id == message.author.id;
+    message.reply("Choses à Gagner (ex: Compte Spotify)").then(r => delete(10000));
+    message.channel.awaitMessages(filter, {max: 1,time: 10000})
+    .then(collected => {
+
+    if(collected.first().content == "cancel") return;
+
+    message.reply("Date quand le Giveaway ce Termine (ex: Mercredi 01 Mai 2019)").then(r => delete(10000));
+
+    message.channel.awaitMessages(filter, {max: 1,time:10000})
+    .then(collected1 => {
+      
+        if(collected1.first().content == "cancel") return;
+
+        let heure = collected1.first().content;
+        let date = collected.first().content;
+
+        let role = message.guild.roles.find(r => r.name === "Notifs • Évents");
+        bot.channels.get("564854058846912525").sendMessage(`:tada: **__Nouveaux GIVEAWAY__** ${role} :tada:`);
+
+        var giveaway = new Discord.RichEmbed()
+        .setColor('')
+        .setDescription(`Tu peux gagner : **${date}** \n Le Giveaway se termine : **${heure}** \n\n Réagis à l'émoji pour participer au Giveaway : 🎉`)
+        .setFooter("By BTT Graphics")
+        .setTimestamp()
+        message.guild.channels.find("name", "「🎉」giveaway").sendEmbed(giveaway)
+        .then(msg => {
+        msg.react("🎉");
+          });
+      });
+      
+  });
+  }
+});
+
 bot.login(process.env.token);
