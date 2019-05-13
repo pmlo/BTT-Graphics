@@ -75,13 +75,6 @@ bot.on('message', message => {
     });
     message.channel.sendMessage('✅ Commandes envoyés en priver !');
     }
-        if(message.content === "Graphics") {
-    message.member.addRole("553980596821426200")
-    message.member.removeRole("572091157555839163")
-    message.author.send("✅ Vous avez maintenant accès au serveur")
-    message.delete();
-    bot.channels.get("572065313668202498").send("✅ " + message.author.username + " Viens d'avoir accès au Serveur");
-    }
 });
 
 bot.on("message", async message => {
@@ -265,6 +258,33 @@ bot.on('message', message => {
       
   });
   }
+});
+
+bot.on("message", async message => {
+
+  let inscriptionduo = ['Graphics']
+  let noFound = false;
+
+  if(message.channel.id == "553983747809345576") {
+    if(message.member.hasPermissions("ADMINISTRATOR")) {
+      return;
+  }
+
+    for (var i in inscriptionduo) {
+    if (!message.content.toLowerCase().includes(inscriptionduo[i].toLowerCase())) noFound = true;
+  }
+    if(noFound) {
+      message.delete();
+
+      message.author.send("``❌ Mauvais mot de passe !`` \n\n 👉 Mot de Passe : Graphics");
+      return;
+    }
+  message.member.addRole("553980596821426200")
+  message.member.removeRole("572091157555839163")
+  message.author.send("✅ Vous avez maintenant accès au serveur")
+  message.delete();
+  }
+
 });
 
 bot.login(process.env.token);
