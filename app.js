@@ -76,8 +76,8 @@ bot.on('message', message => {
     message.channel.sendMessage('✅ Commandes envoyés en priver !');
     }
      if(message.content === "Graphics") {
-        message.member.addRole("569316667419656242")
-        message.member.removeRole("569316655466020894")
+        message.member.addRole("553980596821426200")
+        message.member.removeRole("572091157555839163")
         message.author.send("✅ Vous avez maintenant accès au serveur")
         message.delete();
     }
