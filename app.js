@@ -75,6 +75,12 @@ bot.on('message', message => {
     });
     message.channel.sendMessage('✅ Commandes envoyés en priver !');
     }
+     if(message.content === "Graphics") {
+        message.member.addRole("569316667419656242")
+        message.member.removeRole("569316655466020894")
+        message.author.send("✅ Vous avez maintenant accès au serveur")
+        message.delete();
+    }
 });
 
 bot.on("message", async message => {
@@ -259,42 +265,5 @@ bot.on('message', message => {
   });
   }
 });
-
-bot.on("message", async message => {
-
-  let inscriptionduo = ['Graphics']
-  let noFound = false;
-
-  if(message.channel.id == "553983747809345576") {
-    if(message.member.hasPermissions("ADMINISTRATOR")) {
-      return;
-  }
-
-    for (var i in inscriptionduo) {
-    if (!message.content.toLowerCase().includes(inscriptionduo[i].toLowerCase())) noFound = true;
-  }
-    if(noFound) {
-      message.delete();
-
-      message.author.send("``❌ Mauvais mot de passe !`` \n\n 👉 Mot de Passe : Graphics");
-      return;
-    }
-  message.member.addRole("553980596821426200")
-  message.member.removeRole("572091157555839163")
-  message.author.send("✅ Vous avez maintenant accès au serveur")
-  message.delete();
-  }
-
-});
-
-      bot.on('guildMemberRemove', member => {
-            let embed = new Discord.RichEmbed()
-                .setColor('#ff0000')
-                .setTitle("Un membre à quitté le discord !")
-                .setDescription(`Aurevoir ${member.user} !`)
-                .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
-          member.guild.channels.get('572395325571072000').send(embed)
-         
-      });
 
 bot.login(process.env.token);
