@@ -287,4 +287,14 @@ bot.on("message", async message => {
 
 });
 
+      bot.on('guildMemberRemove', member => {
+            let embed = new Discord.RichEmbed()
+                .setColor('#ff0000')
+                .setTitle("Un membre à quitté le discord !")
+                .setDescription(`Aurevoir ${member.user} !`)
+                .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
+          member.guild.channels.get('572395325571072000').send(embed)
+         
+      });
+
 bot.login(process.env.token);
