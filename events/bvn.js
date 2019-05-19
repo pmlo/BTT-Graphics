@@ -8,7 +8,6 @@ module.exports = (client) => {
             .setDescription(`Bienvenue ${member.user} sur le discord de **BTT Graphics** !`)
             .setFooter('Nous sommes maintenant ' + member.guild.memberCount)
         member.guild.channels.get('572395325571072000').send(embed)
-        member.addRole('572091157555839163')
       });
         
       client.on('guildMemberRemove', member =>{
