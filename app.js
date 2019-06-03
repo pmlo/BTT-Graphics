@@ -115,7 +115,7 @@ bot.on("message", async message => {
   
         channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
   
-        channel = await channel.setParent('572086385562091530');
+        channel = await channel.setParent('584512830309531668');
   
         try {
               let lfdfall = guild.roles.find(`name`, "Membres");
