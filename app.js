@@ -5,7 +5,12 @@ let prefix = "!";
 
 bot.on("ready", () => {
     console.log("Je suis prêt !");
-    bot.user.setActivity("Absent | 31/07 ➔ 09/08", {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
+    let statuses = ["Absent | 01/08 ➔ 09/08", `Follow My Twitch !`];
+
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        bot.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
+    }, 5000)
 });
 
 bot.on("message", async message => {
