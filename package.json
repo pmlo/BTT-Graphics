@@ -34,7 +34,7 @@
     "js-video-url-parser": "^0.3.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.2.2",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "ms": "^2.1.1",
     "node-fetch": "^2.3.0",
     "opusscript": "0.0.6",
