@@ -18,7 +18,7 @@
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "enmap": "^4.8.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "ffmpeg": "0.0.4",
     "fnbrco.js": "^1.0.1",
     "fortnite": "^4.1.1",
